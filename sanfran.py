@@ -14,7 +14,8 @@ st.set_page_config(layout="wide", page_title= "SF Incident Analytics", page_icon
 # LOAD DATA ONCE
 @st.cache_resource
 def load_data():
-    path = "Police_Department_Incident_Reports__2018_to_Present.csv.zip(1)"
+    path = " Police_Department_Incident_Reports__2018_to_Present.csv (1).zip"
+   
     if not os.path.isfile(path):
         path = f"https://raw.githubusercontent.com/Charlyval01/San-Francisco-Insights-streamlit-/main/{path}"
 
