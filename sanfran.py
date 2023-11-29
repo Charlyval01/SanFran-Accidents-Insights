@@ -14,7 +14,7 @@ st.set_page_config(layout="wide", page_title= "SF Incident Analytics", page_icon
 # LOAD DATA ONCE
 @st.cache_resource
 def load_data():
-    path = "Police_Department_Incident_Reports__2018_to_Present.csv.zip"
+    path = "Police_Department_Incident_Reports__2018_to_Present.csv.zip(1)"
     if not os.path.isfile(path):
         path = f"https://raw.githubusercontent.com/Charlyval01/San-Francisco-Insights-streamlit-/main/{path}"
 
@@ -115,7 +115,7 @@ def update_query_params():
     st.experimental_set_query_params(incident_hour=hour_selected)
 
 with row1_1:
-    st.title("San Francisco Incident Insights")
+    st.title("San Francisco Accident Insights")
     hour_selected = st.slider(
         "Hour of incident", 0, 23, key="incident_hour", on_change=update_query_params,
     )
@@ -124,8 +124,7 @@ with row1_2:
     st.write(
         """
     ##
-    Discovering incidents across different timeframes in San Francisco has never been more intuitive. Use the slider on the left to navigate through specific time intervals, offering you a comprehensive view of patterns and evolving trends in reported events.
-    """
+    Discovering incidents across different timeframes in San Francisco has never been more intuitive. Explore accident trends in San Francisco effortlessly with our visual tools. The map below highlights accident hotspots, while the histogram illustrates frequencies over time. Utilize the left slider for a comprehensive view, making it easy to discover evolving patterns and trends in reported incidents.
     )
 
 # LAYING OUT THE MIDDLE SECTION OF THE APP WITH THE MAP AND HISTOGRAM
